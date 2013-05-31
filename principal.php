@@ -23,9 +23,11 @@ $resultado=select($consulta,$conexion,$database_conexion);*/
         <div class="container padT30">
         	<div class="hero-unit">
                 <h2 class="proximamente">Preparando el pr&oacute;ximo Kaliforniazo:
-                <div class="proximamente">"La Graciosa"</div></h2>
+                <div class="proximamente">"La Graciosa"</div> ¿Te lo vas a perder?
                 
-            </div>
+              </h2>
+                <br/><br/>
+                Salida el 15 de Julio desde el aeropuerto de Sevilla, el coste es de 80 € ida y vuelta.</div>
 			<!--
             <div class="row">
                 <div class="span1">
