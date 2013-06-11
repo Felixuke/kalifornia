@@ -1,24 +1,8 @@
-<div id="menuA" class="menuBoton alineaC collapse">
-	<div class="separadorInterior"></div>
-    <a class="btn btn-large btn-kalifa btn-directo" href="#nuevoKaliforniazo" data-toggle="modal" role="button">+ Kaliforniazo</a>
-    <a class="btn btn-large btn-directo" href="#miCuenta" data-toggle="modal" role="button">Mi cuenta</a> 
-    <a class="btn btn-large btn-directo" href="fotos.php">Mis fotos</a> 
-    <a class="btn btn-large btn-directo" href="comentarios.php">Mis comentarios</a>
-    
-    <div class="separadorInterior"></div>
-</div>
-<div class="separaMenu">
-	<div class="botonMenu" data-toggle="collapse" data-target="#menuA">
-        <span class="iconMenu"></span>
-        <span class="iconMenu"></span>
-        <span class="iconMenu"></span>
-    </div>
-</div>
 <!-- Button to trigger modal -->
 <!-- Modal -->
 <div id="nuevoKaliforniazo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close cierroE" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">+ Kaliforniazo</h3>
   </div>
   <form action="php/kaliforniazo-nuevo.php" method="post" enctype="multipart/form-data">
@@ -45,8 +29,8 @@
   <div class="modal-footer">
   	<input type="hidden" name="mail" id="mail" value="<?php echo $_SESSION['mail'];?>"/>
   	<input type="hidden" name="ledoi" id="ledoi" value="1"/>
-    <button type="button" class="btn btn-directo" id="cierroK" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-    <button type="button" class="btn btn-kalifa btn-directo" id="kaliforniazoNuevo">+ Kaliforniazo</button>
+    <button type="button" class="btn btn-kalifa btn-large" id="kaliforniazoNuevo">+ Kaliforniazo</button>
+    <button type="button" class="btn btn-large cierroE" id="cierroK" data-dismiss="modal" aria-hidden="true">Cerrar</button>
   </div>
   </form>
 </div>
@@ -54,7 +38,7 @@
 <!-- Modal -->
 <div id="miCuenta" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <button type="button" class="close cierroE" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel"><span class="nUsuario"><?php echo $_SESSION['usuario'];?></span></h3>
   </div>
   <form action="php/cuenta-modificar.php" method="post" enctype="multipart/form-data">
@@ -64,7 +48,7 @@
         	<p>Usuario</p>
             <input type="text" name="usuario" id="usuario" value="<?php echo $_SESSION['usuario'];?>"/>
             <p>Contraseña actual</p>
-            <input type="password" name="passv" class="passBorrar" id="passv" placeholder="Contraseña actual"/>
+            <input type="password" name="passv" class="passBorrar" id="passv" placeholder="Contraseña actual" value=""/>
         </div>
         <div class="span6">
             <p>Contraseña nueva</p>
@@ -89,8 +73,9 @@
   <div class="modal-footer">
   	<input type="hidden" name="mailU" id="mailU" value="<?php echo $_SESSION['mail'];?>"/>
   	<input type="hidden" name="ledoi" id="ledoi" value="1"/>
-    <button type="button" class="btn btn-directo" data-dismiss="modal" id="cierroU" aria-hidden="true">Cerrar</button>
-    <button type="button" class="btn btn-kalifa btn-directo modiCuenta">Modificar mi cuenta</button>
+    <button type="button" class="btn btn-kalifa btn-large modiCuenta">Guardar</button>
+    <button type="button" class="btn btn-large cierroE" data-dismiss="modal" id="cierroU" aria-hidden="true">Cerrar</button>
+    
   </div>
   </form>
 </div>

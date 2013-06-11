@@ -18,12 +18,13 @@ $resultado=select($consulta,$conexion,$database_conexion);*/
         
     </head>
     <body>
+    	<?php include('php/carga.php');?>
         <?php include('php/menu.php');?>
 		<?php include('php/menuBoton.php');?>
-        <div class="container padT30">
-        	<div class="hero-unit">
+        <div class="container marT60">
+        	<div class="hero-unit hero-p">
                 <h2 class="proximamente">Preparando el pr&oacute;ximo Kaliforniazo:
-                <div class="proximamente">"La Graciosa"</div> ¿Te lo vas a perder?
+                <div class="proximamente">"La Graciosa"</div>
                 
               </h2>
                 <br/><br/>
@@ -44,11 +45,11 @@ $resultado=select($consulta,$conexion,$database_conexion);*/
             </div>
             -->
             <div id="principalK">
-            
+            	<?php include('php/principal.php');?>
             </div>
         </div> 
         <!-- /container -->
-
+        <input type="hidden" name="index" id="index" value="1"/>
         <?php include('php/footer.php');?>
     </body>
 </html>

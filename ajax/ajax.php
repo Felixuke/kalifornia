@@ -38,6 +38,34 @@ switch ($type) {
 		$kalifornia->eliminarKaliforniazo($_GET);
     break;
 	
+	case 8:
+		$kalifornia->mostrarUnKaliforniazo($_GET);
+    break;
+	
+	case 9:
+		$kalifornia->editarImgKaliforniazo($_GET);
+    break;
+	
+	case 10:
+		$kalifornia->eliminarImgKaliforniazo($_GET);
+    break;
+	
+	case 11:
+		$kalifornia->agregarComenImgKaliforniazo($_GET);
+    break;
+	
+	case 12:
+		$kalifornia->veo_img($_GET['id'],$_GET['mail'],$_GET['modelo'],$_GET['x']);
+	break;
+	
+	case 13:
+		$kalifornia->veo_datos($_GET['id'],$_GET['mail']);
+	break;
+	
+	case 14:
+		$kalifornia->agregarImgKaliforniazo($_GET);
+    break;
+	
     default:
     break;
 }

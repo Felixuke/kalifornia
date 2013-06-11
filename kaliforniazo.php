@@ -5,8 +5,7 @@ if(!isset($_SESSION)){
 /*$index=1;*/
 include("php/controlS.php");
 if(isset($_REQUEST['id'])){
-	$consulta='SELECT * FROM img WHERE id_kaliforniazo='.$_REQUEST['id'].' ORDER BY id DESC';
-	$resultado=select($consulta,$conexion,$database_conexion);
+	
 }else{
 	header('Location: principal.php');	
 }
@@ -21,41 +20,21 @@ if(isset($_REQUEST['id'])){
         
     </head>
     <body>
+    	<?php include('php/carga.php');?>
         <?php include('php/menu.php');?>
 		<?php include('php/menuBoton.php');?>
-        <div class="container padT30">
-        	<div class="hero-unit">
-                <h1>A&ntilde;ade una foto</h1>
+        
+        <div class="container marT60">
+       		<?php
+			$modelo=1; include('php/heroKalifa.php');?>
+            <div id="principalK">
+            	<?php include('php/principalUno.php');?>
             </div>
-            <div class="row">
-            <?php
-			$x=3;
-			while($reg=@mysql_fetch_array($resultado)){
-				$consultaU='SELECT * FROM usuario WHERE mail="'.$reg['mail'].'"';
-				$resultadoU=select($consultaU,$conexion,$database_conexion);
-				$regU=@mysql_fetch_array($resultadoU);
-			?> 
-                <div class="span4 show-grid">
-  
-                    <img src="img/<?php echo $reg['id'];?>.jpg" width="100%" />
-                    <h2><?php echo $reg['titulo'];?></h2>
-                    <p class="descripcion"><?php echo $reg['descripcion'];?>To complement this strong statement, you don't want anything that competes for attention. Instead pick something plain and simple like Cabin.To complement this strong statement, you don't want anything that competes for attention. Instead pick something plain and simple like Cabin.</p>
-                    <p class="autor">Subida por <?php 
-                                if($regU['mail']==$_SESSION['mail']){ 
-                                    echo '<span class="nUsuario">'.$regU['nombre'].'</span>';
-                                }else{
-                                    echo $regU['nombre'];
-                                }?></p>
-
-                </div>
-            <?php
-            }
-            ?>
-            </div>
-
-        </div> 
+       	</div>
         <!-- /container -->
-
+		<input type="hidden" name="index" id="index" value="0"/>
+        <input type="hidden" name="idK" id="idK" value="<?php echo $_REQUEST['id'];?>"/>
         <?php include('php/footer.php');?>
+        
     </body>
 </html>
